@@ -1,4 +1,4 @@
-// import { StrictMode } from 'react'
+
 import { createRoot } from 'react-dom/client';
 import { store, persistor } from './redux/store.js';
 import { PersistGate } from 'redux-persist/integration/react';
