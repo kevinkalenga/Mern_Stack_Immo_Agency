@@ -1,7 +1,7 @@
 import {FaSearch} from 'react-icons/fa';
 import {Link} from 'react-router-dom';
 import {useSelector} from 'react-redux'
-
+// hover:underline
 function Header() {
   
   const {currentUser} = useSelector(state => state.user)
