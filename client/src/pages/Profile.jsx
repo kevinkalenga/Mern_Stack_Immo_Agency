@@ -20,6 +20,7 @@ import {
 import {getStorage, ref, uploadBytesResumable,  getDownloadURL} from 'firebase/storage';
 import { app } from '../firebase';
 import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 
 
@@ -168,6 +169,10 @@ const handleSignOut = async () => {
                    uppercase hover:opacity-95 disabled:opacity-80'>
                   {loading ? 'Loading...' : 'Update'}
                </button>
+               <Link className='bg-green-700 rounded-lg text-center
+                text-white p-3 uppercase hover:opacity-95' to={"/create-listing"}>
+                  Create Listing
+               </Link>
       </form>
         
       <div className='flex justify-between mt-5'>
