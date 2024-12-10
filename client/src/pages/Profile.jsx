@@ -30,7 +30,7 @@ export default function Profile() {
  const [fileUploadError, setFileUploadError] = useState(false);
  const [userListings, setUserListings] = useState([])
   const [file, setFile] = useState(undefined);
-  console.log(file)
+  // console.log(file)
   const [formData, setFormData] = useState({});
   const [showListingsError, setShowListingsError] = useState(false);
   // console.log(formData)
