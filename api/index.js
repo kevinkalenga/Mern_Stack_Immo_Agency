@@ -13,7 +13,7 @@ mongoose.connect(process.env.MONGO).then(() => {
    console.log(err)
 })
 
-const __direname = path.resolve();
+const __dirname = path.resolve();
 
 const app = express();
 
