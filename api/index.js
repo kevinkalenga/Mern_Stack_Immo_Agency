@@ -13,6 +13,8 @@ mongoose.connect(process.env.MONGO).then(() => {
    console.log(err)
 })
 
+const __direname = path.resolve();
+
 const app = express();
 
 app.use(express.json());
@@ -31,6 +33,12 @@ app.get('/test', (req, res) => {
 app.use("/api/user", userRouter);
 app.use("/api/auth", authRouter);
 app.use("/api/listing", listingRouter);
+
+pp.use(express.static(path.join(__dirname, '/client/dist')));
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'client', 'dist', 'index.html'));
+})
 
 // middleware to handle error
 app.use((err, req, res, next) => {
