@@ -7,6 +7,11 @@ export default function Contact({listing}) {
   const [landlord, setLandlord] = useState(null);
   const [message, setMessage] = useState('')
 
+  
+  function onChange(e) {
+    setMessage(e.target.value)
+  }
+  
    useEffect(() => {
      const fetchLandlOrd = async () => {
        try {
@@ -20,9 +25,7 @@ export default function Contact({listing}) {
      fetchLandlOrd()
    }, [listing.userRef])
  
-  function onChange(e) {
-    setMessage(e.target.value)
-  }
+  
   
   
    return (

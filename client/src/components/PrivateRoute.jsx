@@ -1,3 +1,4 @@
+// adresse ip: 176.186.169.113/32
 import { useSelector } from 'react-redux';
 import { Outlet, Navigate } from 'react-router-dom';
 
