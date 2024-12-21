@@ -17,7 +17,7 @@ const userSchema = new mongoose.Schema({
     },
     avatar:{
         type: String,
-        default: "https://up.yimg.com/ib/th?id=OIP.0yi26fO0azz9oRCE5I59zgHaE8&pid=Api&rs=1&c=1&qlt=95&w=163&h=108"
+        default: "https://randomuser.me/api/portraits/women/16.jpg"
       },
 }, {
     timestamps: true
