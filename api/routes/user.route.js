@@ -9,4 +9,5 @@ router.delete('/delete/:id', verifyToken, deleteUser)
 router.get('/listings/:id', verifyToken, getUserListings)
 router.get('/:id', verifyToken, getUser)
 
+// We can change it name as we have exported as a default
 export default router;
