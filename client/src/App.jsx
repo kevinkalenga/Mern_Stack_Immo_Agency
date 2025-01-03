@@ -9,6 +9,7 @@ import CreateListing from './pages/createListing';
 import UpdateListing from './pages/UpdateListing';
 import Search from './pages/Search';
 import Header from './components/Header';
+import Footer from './components/Footer';
 import PrivateRoute from './components/PrivateRoute';
 
 function App() {
@@ -30,7 +31,7 @@ function App() {
            </Route>
        
        </Routes>
-    
+       <Footer />
     </BrowserRouter>
   )
 }
