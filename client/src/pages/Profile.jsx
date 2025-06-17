@@ -16,6 +16,8 @@ import {
   deleteUserStart,
   deleteUserSuccess,
   signOutUserStart,
+  signOutUserFailure,
+  signOutUserSuccess,
 } from '../redux/user/userSlice';
 import {getStorage, ref, uploadBytesResumable,  getDownloadURL} from 'firebase/storage';
 import { app } from '../firebase';
@@ -27,13 +29,14 @@ import { Link } from 'react-router-dom';
 export default function Profile() {
   const fileRef = useRef(null)
   const {currentUser, loading, error} = useSelector((state) => state.user);
+  // console .log(currentUser)
  const [fileUploadError, setFileUploadError] = useState(false);
  const [userListings, setUserListings] = useState([])
   const [file, setFile] = useState(undefined);
   // console.log(file)
   const [formData, setFormData] = useState({});
   const [showListingsError, setShowListingsError] = useState(false);
-  // console.log(formData)
+  //  console.log(formData)
   const [filePerc, setFilePerc] = useState(0);
   const dispatch = useDispatch();
   const [updateSuccess, setUpdateSuccess] = useState(false);
@@ -126,12 +129,12 @@ const handleSignOut = async () => {
     const res = await fetch('/api/auth/signout');
     const data = await res.json();
     if (data.success === false) {
-      dispatch(deleteUserFailure(data.message));
+      dispatch(signOutUserFailure(data.message));
       return;
     }
-    dispatch(deleteUserSuccess(data));
+    dispatch(signOutUserSuccess(data));
   } catch (error) {
-    dispatch(deleteUserFailure(data.message));
+    dispatch(signOutUserFailure(data.message));
   }
 };
 
