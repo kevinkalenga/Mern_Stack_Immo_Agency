@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import {Link, useNavigate} from 'react-router-dom';
 import OAuth from '../components/OAuth';
+import {toast} from 'react-toastify'
 
 export default function Signup() {
   
@@ -17,6 +18,14 @@ export default function Signup() {
   }
   const handleSubmit = async(e) => {
      e.preventDefault();
+     
+     if(!formData.username || !formData.email || !formData.password) {
+        toast.error('Please fill out all fields')
+        return;
+        // return setErrorMessage('Please fill out all fields')
+      }
+     
+     
      try {
       
       setLoading(true)

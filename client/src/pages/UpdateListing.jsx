@@ -4,7 +4,7 @@ import {app} from '../firebase';
 import {getStorage, ref, uploadBytesResumable,  getDownloadURL} from 'firebase/storage'
 import {useSelector} from 'react-redux';
 import { useNavigate, useParams } from "react-router-dom";
-export default function CreateListing() {
+export default function UpdateListing() {
   
   const {currentUser} = useSelector(state => state.user)
   const navigate = useNavigate();

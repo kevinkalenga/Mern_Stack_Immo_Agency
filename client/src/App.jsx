@@ -11,11 +11,13 @@ import Search from './pages/Search';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import PrivateRoute from './components/PrivateRoute';
+import { ToastContainer } from "react-toastify";
 
 function App() {
   return (
     <BrowserRouter>
         <Header />
+        <ToastContainer />
        <Routes>
           
            <Route path='/' element={<Home />} />
